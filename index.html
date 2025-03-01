@@ -5,49 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
+        /* General Body Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            padding: 20px;
             background: url('background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
+
+        /* Centered Form Box */
         .container {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            width: 420px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.2);
+            text-align: center;
         }
-        input, button {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+
+        h2 {
+            margin-bottom: 20px;
+            color: #FFD700;
+            font-size: 26px;
         }
+
+        /* Input Fields */
+        input {
+            width: 92%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            color: black;
+            background: rgba(255, 255, 255, 0.9);
+            outline: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons */
         button {
-            background-color: blue;
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
             color: white;
+            background: linear-gradient(45deg, #ff512f, #dd2476);
             cursor: pointer;
+            transition: 0.3s;
         }
+
         button:hover {
-            background-color: darkblue;
+            background: linear-gradient(45deg, #dd2476, #ff512f);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Register</h2>
+        <h2>Create an Account</h2>
         <form id="registerForm">
-            <input type="text" id="name" placeholder="Enter Name" required><br>
-            <input type="text" id="department" placeholder="Enter Department" required><br>
-            <input type="text" id="year" placeholder="Enter Year" required><br>
-            <input type="text" id="section" placeholder="Enter Section" required><br>
-            <input type="password" id="password" placeholder="Enter Password" required><br>
+            <input type="text" id="name" placeholder="Full Name" required><br>
+            <input type="text" id="department" placeholder="Department" required><br>
+            <input type="text" id="year" placeholder="Year" required><br>
+            <input type="text" id="section" placeholder="Section" required><br>
+            <input type="password" id="password" placeholder="Create Password" required><br>
             <input type="password" id="confirmPassword" placeholder="Confirm Password" required><br>
             <button type="button" onclick="register()">Register</button>
         </form>
@@ -79,8 +114,8 @@
 
             link.click();
 
-            alert("Registration Successful! Redirecting to Login Page...");
-            window.location.href = "login.html"; // Redirect to Login Page
+            // Redirect to login page without showing an alert
+            window.location.href = "login.html";
         }
     </script>
 
